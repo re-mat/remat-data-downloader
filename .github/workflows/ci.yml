@@ -62,5 +62,4 @@ jobs:
 
       - name: Test package
         run: >-
-          python -m pytest -ra 
-          --durations=20
+          python -m pytest -ra --durations=20
