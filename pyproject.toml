@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 
 [project]
-name = "remat-data-downloader"
+name = "remat-download-data"
 authors = [
   { name = "Ben Galewsky", email = "bengal1@illinois.edu" },
 ]

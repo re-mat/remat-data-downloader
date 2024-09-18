@@ -1,4 +1,4 @@
-# remat-data-downloader
+# RE-MAT Data Downloader
 
 [![Actions Status][actions-badge]][actions-link]
 [![Documentation Status][rtd-badge]][rtd-link]
@@ -8,6 +8,62 @@
 [![PyPI platforms][pypi-platforms]][pypi-link]
 
 [![GitHub Discussion][github-discussions-badge]][github-discussions-link]
+
+This package provides a simple interface to download datasets used in the ReMat
+project.
+
+## Installation
+
+This is a python package and can be installed using pip:
+
+```bash
+pip install remat-data-downloader
+```
+
+## Authentication
+
+You need to obtain a Clowder API key to use this package. You can obtain this
+key by logging into the
+[RE-MAT Clowder instance](https://re-mat.clowder.ncsa.illinois.edu/) and going
+to your user settings page (grey silhouette in the upper right corner of the
+page). Click on the _API Keys_ tab and create a new key. Save this key in a file
+nameed `clowder_key.txt` in the directory where you will be running the
+`remat-download-data` command.
+
+## Usage
+
+The remat-download-data command can be run from your command line. It has
+commands to interact with Clowder spaces and with datasets.
+
+### List Spaces
+
+```bash
+remat-download-data spaces list
+
+                      Clowder Spaces
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Name              ┃ ID                       ┃ datasets ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━┩
+│ Front velocities  │ 6674972be4b0a2d1b9ba0228 │ 303      │
+│ DSC Post Cures    │ 6669d4d0e4b0a2d1b9b9a797 │ 228      │
+│ DSC Cure Kinetics │ 64343b6be4b01a23c58bad90 │ 307      │
+└───────────────────┴──────────────────────────┴──────────┘
+
+```
+
+### Download Datasets
+
+Now that you know the unique ID for the space you want to download, you can
+download the datasets using the `download` command. This command will create
+subdirectories for each dataset and download the metadata as a json file and the
+DSC Curve as a csv file.
+
+You can re-run this command, and it will skip downloads of datasets that already
+exist in the directory.
+
+```bash
+remat-download-data spaces download 6669d4d0e4b0a2d1b9b9a797
+```
 
 <!-- SPHINX-START -->
 
