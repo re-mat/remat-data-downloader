@@ -1,0 +1,12 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 2024.08.19
+_src_path: gh:scientific-python/cookie
+backend: hatch
+email: bengal1@illinois.edu
+full_name: Ben Galewsky
+license: BSD
+org: re-mat
+project_name: remat-data-downloader
+project_short_description: Download datasets from the RE-MAT Clowder
+url: https://github.com/re-mat/remat-data-downloader
+vcs: true
